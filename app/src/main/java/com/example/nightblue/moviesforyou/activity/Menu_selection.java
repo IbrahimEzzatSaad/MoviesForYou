@@ -64,7 +64,6 @@ public class Menu_selection extends AppCompatActivity {
     private String namegenre;
 
 
-    private CharSequence charSequence;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -82,7 +81,7 @@ public class Menu_selection extends AppCompatActivity {
         recyclerViews.setAdapter(mAdapter);
         fetchImages();
 
-        recyclerViews.addOnItemTouchListener(new GalleryAdapter.RecyclerTouchListener(getApplicationContext(), recyclerViews, new GalleryAdapter.ClickListener() {
+        recyclerViews.addOnItemTouchListener(new GalleryAdapterMenu.RecyclerTouchListener(getApplicationContext(), recyclerViews, new GalleryAdapterMenu.ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 Bundle bundle = new Bundle();

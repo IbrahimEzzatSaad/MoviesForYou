@@ -78,22 +78,10 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
     private ProgressDialog pDialog;
 
 
-
-
-
-
-
-
-
-
     private GalleryAdapter mAdapterDrama,mAdapterAction,mAdapterHorror,mAdapterAnime;
 
 
-    private RecyclerView recyclerViewDrama;
-    private RecyclerView RecycelViewHorror;
-
-    private RecyclerView recyclerViewAction;
-    private RecyclerView RecycelViewAnime;
+    private RecyclerView recyclerViewDrama,RecycelViewHorror,RecycelViewAnime,recyclerViewAction;
 
 
 
@@ -134,10 +122,10 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
 
 
 
-        recyclerViewDrama = (RecyclerView) findViewById(R.id.RecycelViewDrama);
-        RecycelViewHorror = (RecyclerView) findViewById(R.id.RecycelViewHorror);
-        recyclerViewAction = (RecyclerView) findViewById(R.id.RecycelViewAction);
-        RecycelViewAnime = (RecyclerView) findViewById(R.id.RecycelViewAnime);
+        recyclerViewDrama =  findViewById(R.id.RecycelViewDrama);
+        RecycelViewHorror =  findViewById(R.id.RecycelViewHorror);
+        recyclerViewAction =  findViewById(R.id.RecycelViewAction);
+        RecycelViewAnime =  findViewById(R.id.RecycelViewAnime);
 
 
         pDialog = new ProgressDialog(this);
