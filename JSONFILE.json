@@ -1,0 +1,78 @@
+[{
+    "name": "Requiem for a Dream",
+    "image": "https://cdn.egy.best/serve/movies/art-1863873622-x300.jpg",
+    "timestamp": "2016",
+	"url": "https://openload.co/embed/YQ6Ll5xx34c/",
+	"genre": ["Drama"]
+
+},
+{
+    "name": "Batman vs Superman",
+    "image": "https://cdn.egy.best/serve/movies/art-0820448668-x300.jpg",
+	"url": "https://openload.co/embed/ex_PAbkLQXI/",
+    "timestamp": "2016",
+    "genre": ["Action", "Adventure", "Fantasy"]
+},
+{
+    "name": "The Purge",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQzNTcwODEyM15BMl5BanBnXkFtZTcwMjM1MDI0OQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/OdtQTdWV8aI/",
+    "timestamp": "2013",
+    "genre": ["Horror" , "Thriller"]
+},
+{
+    "name": "John Wick",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/B3dN1P5uAMo/",
+    "timestamp": "2014",
+    "genre": ["Action" , "Crime" , "Thriller"]
+},
+{
+    "name": "Logan",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzc5MTU4N2EtYTkyMi00NjdhLTg3NWEtMTY4OTEyMzJhZTAzXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/wma_qhVStfM/",
+    "timestamp": "2017",
+    "genre": ["Action" , "Drama" , "Sci-Fi"]
+},
+{
+    "name": "The Dark Knight",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/E6h55X6Q3Qo/",
+    "timestamp": "2008",
+    "genre": ["Action" , "Crime" , "Drama"]
+},
+{
+    "name": "The Revenant",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDE5OWMzM2QtOTU2ZS00NzAyLWI2MDEtOTRlYjIxZGM0OWRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/M21iDf0KlIg/",
+    "timestamp": "2015",
+    "genre": ["Action" , "Adventure"]
+},
+{
+    "name": "Up",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/f_UInAGY_lY/",
+    "timestamp": "2009",
+    "genre": ["Animation" , "Adventure", "Comedy"]
+},
+{
+    "name": "Zootopia",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTMyMjEyNzIzMV5BMl5BanBnXkFtZTgwNzIyNjU0NzE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/amD0QLq99sI/",
+    "timestamp": "2016",
+    "genre": ["Animation" , "Adventure", "Comedy"]
+},
+{
+    "name": "Evil Dead",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTQ3OTkwNTgyN15BMl5BanBnXkFtZTcwNTAzOTAzOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/dxDfYpK1nT8/",
+    "timestamp": "2013",
+    "genre": ["Fantasy" , "Horror", "Thriller"]
+},
+{
+    "name": "The Shawshank Redemption",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+	"url": "https://openload.co/embed/Q2Y3eVTBs3M/",
+    "timestamp": "1994",
+    "genre": ["Drama"]
+}]
