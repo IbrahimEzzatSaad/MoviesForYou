@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.nightblue.moviesforyou.activity.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:background="#171818">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+    <TextView
+        android:id="@+id/Drama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drama"
+        android:layout_marginLeft="2dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecycelViewDrama"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/Drama"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="147dp"
+        />
+    <TextView
+        android:id="@+id/Horror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horror"
+        android:layout_below="@id/RecycelViewDrama"
+        android:layout_marginLeft="2dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecycelViewHorror"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/Horror"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="147dp"
+        />
+
+
+
+
+
+        <TextView
+            android:id="@+id/Action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:layout_below="@id/RecycelViewHorror"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="serif"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#ffffff"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/RecycelViewAction"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="3dp"
+            android:layout_below="@+id/Action"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="147dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/Anime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anime"
+            android:layout_below="@id/RecycelViewAction"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="serif"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#ffffff"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/RecycelViewAnime"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="3dp"
+            android:layout_below="@+id/Anime"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="147dp"
+            />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </TableLayout>
+    </ScrollView>
+</RelativeLayout>

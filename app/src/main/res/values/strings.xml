@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MoviesHome</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_network_gallery">NetworkGalleryActivity</string>
+    <string name="title_activity_sd_card_gallery">SdCardGalleryActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Movies">Movies</string>
+    <string name="drawer_item_home">draweritemhome</string>
+
+    <string name="drawer_item_settings">draweritemsettings</string>
+
+</resources>
