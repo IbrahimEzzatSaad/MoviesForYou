@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,9 +26,6 @@ import java.util.ArrayList;
 
 import com.example.nightblue.moviesforyou.R;
 import com.example.nightblue.moviesforyou.adapter.GalleryAdapter;
-import com.example.nightblue.moviesforyou.adapter.GalleryAdapters;
-import com.example.nightblue.moviesforyou.adapter.GalleryAdaptersss;
-import com.example.nightblue.moviesforyou.adapter.GalleryAdapterssss;
 import com.example.nightblue.moviesforyou.app.AppController;
 import com.example.nightblue.moviesforyou.model.Image;
 import com.mikepenz.materialdrawer.Drawer;
@@ -54,7 +49,7 @@ import com.example.nightblue.moviesforyou.widgets.MaterialSearchView;
 public class MainActivity extends AppCompatActivity implements onSimpleSearchActionsListener, onSearchListener {
 
     private String TAG = MainActivity.class.getSimpleName();
-    private static final String endpoint = "https://haahvgpaq.000webhostapp.com/New%20Text%20Document%20(12).json";
+    private static final String endpoint = "https://api.jsonbin.io/b/5cbf6edf1f6d9a5478d012db";
 
 
 
@@ -91,12 +86,7 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
 
 
 
-    private GalleryAdapter mAdapter;
-    private GalleryAdapters mAdapters;
-
-
-    private GalleryAdaptersss mAdaptersss;
-    private GalleryAdapterssss mAdapterssss;
+    private GalleryAdapter mAdapterDrama,mAdapterAction,mAdapterHorror,mAdapterAnime;
 
 
     private RecyclerView recyclerViewDrama;
@@ -105,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
     private RecyclerView recyclerViewAction;
     private RecyclerView RecycelViewAnime;
 
-    private DrawerLayout mDrawerLayout;
 
 
 
@@ -157,35 +146,32 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
         ImageAction = new ArrayList<>();
         ImagesAnime = new ArrayList<>();
 
-        mAdapter = new GalleryAdapter(getApplicationContext(), ImageDrama);
-        mAdapters = new GalleryAdapters(getApplicationContext(), ImagesHorror);
-        mAdaptersss = new GalleryAdaptersss(getApplicationContext(), ImageAction);
-        mAdapterssss = new GalleryAdapterssss(getApplicationContext(), ImagesAnime);
+        mAdapterDrama = new GalleryAdapter(getApplicationContext(), ImageDrama);
+        mAdapterHorror = new GalleryAdapter(getApplicationContext(), ImagesHorror);
+        mAdapterAction = new GalleryAdapter(getApplicationContext(), ImageAction);
+        mAdapterAnime = new GalleryAdapter(getApplicationContext(), ImagesAnime);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager layoutManagers = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager layoutManagerss = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager layoutManagersss = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
 
 
 
-        recyclerViewAction.setLayoutManager(layoutManagerss);
+        recyclerViewAction.setLayoutManager(layoutManager);
         recyclerViewAction.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewAction.setAdapter(mAdaptersss);
+        recyclerViewAction.setAdapter(mAdapterAction);
 
 
-        RecycelViewAnime.setLayoutManager(layoutManagersss);
+        RecycelViewAnime.setLayoutManager(layoutManager);
         RecycelViewAnime.setItemAnimator(new DefaultItemAnimator());
-        RecycelViewAnime.setAdapter(mAdapterssss);
+        RecycelViewAnime.setAdapter(mAdapterAnime);
 
         recyclerViewDrama.setLayoutManager(layoutManager);
         recyclerViewDrama.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewDrama.setAdapter(mAdapter);
+        recyclerViewDrama.setAdapter(mAdapterDrama);
 
-        RecycelViewHorror.setLayoutManager(layoutManagers);
+        RecycelViewHorror.setLayoutManager(layoutManager);
         RecycelViewHorror.setItemAnimator(new DefaultItemAnimator());
-        RecycelViewHorror.setAdapter(mAdapters);
+        RecycelViewHorror.setAdapter(mAdapterHorror);
 
 
 
@@ -381,6 +367,10 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
 
         fetchImages();
     }
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_home, menu);
@@ -466,11 +456,9 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
 
                                 JSONObject obj = response.getJSONObject(i);
                                 Image image = new Image();
-                                image.setName(obj.getString("title"));
-                                image.setSmall(obj.getString("image"));
-                                image.setMedium(obj.getString("image"));
-                                image.setLarge(obj.getString("image"));
-                                image.setTimestamp(obj.getString("releaseYear"));
+                                image.setName(obj.getString("name"));
+                                image.setImage(obj.getString("image"));
+                                image.setTimestamp(obj.getString("timestamp"));
                                 image.setURL(obj.getString("url"));
 
 
@@ -504,8 +492,11 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
                                 Log.e(TAG, "Json parsing error: " + e.getMessage());
                             }
                         }
-                        mAdapters.notifyDataSetChanged();
-                        mAdapter.notifyDataSetChanged();
+                        mAdapterAction.notifyDataSetChanged();
+                        mAdapterHorror.notifyDataSetChanged();
+                        mAdapterAnime.notifyDataSetChanged();
+                        mAdapterDrama.notifyDataSetChanged();
+
                     }
                 }, new Response.ErrorListener() {
             @Override

@@ -21,22 +21,22 @@ import com.example.nightblue.moviesforyou.model.Image;
 import java.util.List;
 
 
-public class GalleryAdaptersss extends RecyclerView.Adapter<GalleryAdaptersss.MyViewHolder> {
+public class GalleryAdapterMenu extends RecyclerView.Adapter<GalleryAdapterMenu.MyViewHolder> {
 
     private List<Image> images;
     private Context mContext;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnail;
+        public ImageView thumbnails;
 
         public MyViewHolder(View view) {
             super(view);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            thumbnails = (ImageView) view.findViewById(R.id.thumbnails);
         }
     }
 
 
-    public GalleryAdaptersss(Context context, List<Image> images) {
+    public GalleryAdapterMenu(Context context, List<Image> images) {
         mContext = context;
         this.images = images;
     }
@@ -44,7 +44,7 @@ public class GalleryAdaptersss extends RecyclerView.Adapter<GalleryAdaptersss.My
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.gallery_thumbnail, parent, false);
+                .inflate(R.layout.gallery_thumbnailmenu, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -53,11 +53,11 @@ public class GalleryAdaptersss extends RecyclerView.Adapter<GalleryAdaptersss.My
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Image image = images.get(position);
 
-        Glide.with(mContext).load(image.getMedium())
+        Glide.with(mContext).load(image.getImage())
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.thumbnail);
+                .into(holder.thumbnails);
     }
 
     @Override
@@ -74,9 +74,9 @@ public class GalleryAdaptersss extends RecyclerView.Adapter<GalleryAdaptersss.My
     public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
         private GestureDetector gestureDetector;
-        private GalleryAdaptersss.ClickListener clickListener;
+        private GalleryAdapterMenu.ClickListener clickListener;
 
-        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final GalleryAdaptersss.ClickListener clickListener) {
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final GalleryAdapterMenu.ClickListener clickListener) {
             this.clickListener = clickListener;
             gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
                 @Override

@@ -130,7 +130,7 @@ public class SlideshowDialogFragment extends DialogFragment {
 
             Image image = images.get(position);
 
-            Glide.with(getActivity()).load(image.getLarge())
+            Glide.with(getActivity()).load(image.getImage())
                     .thumbnail(0.5f)
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)

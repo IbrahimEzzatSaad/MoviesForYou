@@ -36,8 +36,7 @@ import java.util.List;
 
 import com.example.nightblue.moviesforyou.R;
 import com.example.nightblue.moviesforyou.adapter.GalleryAdapter;
-import com.example.nightblue.moviesforyou.adapter.GalleryAdapters;
-import com.example.nightblue.moviesforyou.adapter.GalleryAdapterss;
+import com.example.nightblue.moviesforyou.adapter.GalleryAdapterMenu;
 import com.example.nightblue.moviesforyou.app.AppController;
 import com.example.nightblue.moviesforyou.model.Image;
 import com.mikepenz.materialdrawer.Drawer;
@@ -59,9 +58,9 @@ public class Menu_selection extends AppCompatActivity {
     private String TAG = MainActivity.class.getSimpleName();
 
     private RecyclerView recyclerViews;
-    private GalleryAdapterss mAdapterss;
+    private GalleryAdapterMenu mAdapter;
     private ArrayList<Image> imagess;
-    private static final String endpoint = "https://haahvgpaq.000webhostapp.com/New%20Text%20Document%20(12).json";
+    private static final String endpoint = "https://api.jsonbin.io/b/5cbf6edf1f6d9a5478d012db";
     private String namegenre;
 
 
@@ -74,13 +73,13 @@ public class Menu_selection extends AppCompatActivity {
         namegenre = intent.getExtras().getString("genre");
         imagess = new ArrayList<>();
 
-        mAdapterss = new GalleryAdapterss(getApplicationContext(), imagess);
+        mAdapter = new GalleryAdapterMenu(getApplicationContext(), imagess);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerViews = (RecyclerView) findViewById(R.id.RecycelViews);
         recyclerViews.setLayoutManager(mLayoutManager);
         recyclerViews.setItemAnimator(new DefaultItemAnimator());
-        recyclerViews.setAdapter(mAdapterss);
+        recyclerViews.setAdapter(mAdapter);
         fetchImages();
 
         recyclerViews.addOnItemTouchListener(new GalleryAdapter.RecyclerTouchListener(getApplicationContext(), recyclerViews, new GalleryAdapter.ClickListener() {
@@ -118,14 +117,9 @@ public class Menu_selection extends AppCompatActivity {
 
                                 JSONObject obj = response.getJSONObject(i);
                                 Image image = new Image();
-                                List<String> name = new ArrayList<String>();
-                                image.setName(obj.getString("title"));
-                                name.add(obj.getString("title"));
-
-                                image.setSmall(obj.getString("image"));
-                                image.setMedium(obj.getString("image"));
-                                image.setLarge(obj.getString("image"));
-                                image.setTimestamp(obj.getString("releaseYear"));
+                                image.setName(obj.getString("name"));
+                                image.setImage(obj.getString("image"));
+                                image.setTimestamp(obj.getString("timestamp"));
 
 
                                 // Genre is json array
@@ -139,14 +133,14 @@ public class Menu_selection extends AppCompatActivity {
                                     imagess.add(image);
                                 }
 
-                                if (obj.getString("title").matches(namegenre)){
+                                if (image.getName().toLowerCase().contains(namegenre.toLowerCase())){
                                     imagess.add(image);
                                 }
                             } catch (JSONException e) {
                                 Log.e(TAG, "Json parsing error: " + e.getMessage());
                             }
                         }
-                        mAdapterss.notifyDataSetChanged();
+                        mAdapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
             @Override
