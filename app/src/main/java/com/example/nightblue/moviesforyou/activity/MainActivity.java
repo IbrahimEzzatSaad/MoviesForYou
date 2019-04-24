@@ -139,25 +139,24 @@ public class MainActivity extends AppCompatActivity implements onSimpleSearchAct
         mAdapterAction = new GalleryAdapter(getApplicationContext(), ImageAction);
         mAdapterAnime = new GalleryAdapter(getApplicationContext(), ImagesAnime);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
 
 
 
-        recyclerViewAction.setLayoutManager(layoutManager);
+        recyclerViewAction.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewAction.setItemAnimator(new DefaultItemAnimator());
         recyclerViewAction.setAdapter(mAdapterAction);
 
 
-        RecycelViewAnime.setLayoutManager(layoutManager);
+        RecycelViewAnime.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         RecycelViewAnime.setItemAnimator(new DefaultItemAnimator());
         RecycelViewAnime.setAdapter(mAdapterAnime);
 
-        recyclerViewDrama.setLayoutManager(layoutManager);
+        recyclerViewDrama.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewDrama.setItemAnimator(new DefaultItemAnimator());
         recyclerViewDrama.setAdapter(mAdapterDrama);
 
-        RecycelViewHorror.setLayoutManager(layoutManager);
+        RecycelViewHorror.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         RecycelViewHorror.setItemAnimator(new DefaultItemAnimator());
         RecycelViewHorror.setAdapter(mAdapterHorror);
 
